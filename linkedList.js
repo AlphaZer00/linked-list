@@ -103,17 +103,28 @@ const List = () => {
 	const insertAt = (value, index) => {
 		const newNode = Node(value);
 		let pointer = head;
-        if (index === 0) {
-            prepend(value);
-            return;
-        }
-		for (let i = 0; i < index-1; i++) {
+		if (index === 0) {
+			prepend(value);
+			return;
+		}
+		for (let i = 0; i < index - 1; i++) {
 			pointer = pointer.nextNode;
 		}
-        newNode.nextNode = pointer.nextNode;
-        pointer.nextNode = newNode;
+		newNode.nextNode = pointer.nextNode;
+		pointer.nextNode = newNode;
 	};
 
+	const removeAt = (index) => {
+        if (index === 0) {
+            head = head.nextNode;
+            return;
+        }
+		let pointer = head;
+		for (let i = 0; i < index - 1; i++) {
+			pointer = pointer.nextNode;
+		}
+		pointer.nextNode = pointer.nextNode.nextNode;
+	};
 	return {
 		append,
 		prepend,
@@ -126,6 +137,7 @@ const List = () => {
 		find,
 		toString,
 		insertAt,
+		removeAt,
 	};
 };
 
