@@ -63,7 +63,7 @@ const List = () => {
 		let pointer = head;
 		if (head === value) return true;
 		while (pointer.nextNode) {
-			if (pointer === value) {
+			if (pointer.value === value) {
 				return true;
 			}
 			pointer = pointer.nextNode;
@@ -76,7 +76,7 @@ const List = () => {
 		let index = 0;
 		if (head === value) return index;
 		while (pointer.nextNode) {
-			if (pointer === value) {
+			if (pointer.value === value) {
 				return index;
 			}
 			index++;
