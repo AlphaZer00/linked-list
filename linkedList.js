@@ -53,10 +53,10 @@ const List = () => {
 
 	const pop = () => {
 		let pointer = head;
-		while (pointer.nextNode) {
+		while (pointer.nextNode.nextNode) {
 			pointer = pointer.nextNode;
 		}
-		pointer = null;
+		pointer.nextNode = null;
 	};
 
 	const contains = (value) => {
