@@ -115,10 +115,10 @@ const List = () => {
 	};
 
 	const removeAt = (index) => {
-        if (index === 0) {
-            head = head.nextNode;
-            return;
-        }
+		if (index === 0) {
+			head = head.nextNode;
+			return;
+		}
 		let pointer = head;
 		for (let i = 0; i < index - 1; i++) {
 			pointer = pointer.nextNode;
