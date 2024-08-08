@@ -22,7 +22,7 @@ const List = () => {
 	};
 
 	const size = () => {
-		let count = 0;
+		let count = 1;
 		let pointer = head;
 		while (pointer.nextNode) {
 			pointer = pointer.nextNode;
